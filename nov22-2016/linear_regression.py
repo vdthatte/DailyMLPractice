@@ -35,6 +35,7 @@ plt.show()
 
 """
 
+# SINGLE LINEAR REGRESSION ON TV DATA
 # create a fitter model
 
 lm = smf.ols(formula='Sales ~ TV', data=data).fit()
@@ -61,10 +62,10 @@ preds = lm.predict(X_new)
 
 
 # first, plot the observed data
-data.plot(kind='scatter', x='TV', y='Sales')
+# data.plot(kind='scatter', x='TV', y='Sales')
 
 # then, plot the least squares line
-plt.plot(X_new, preds, c='red', linewidth=2)
+# plt.plot(X_new, preds, c='red', linewidth=2)
 
 # plt.show()
 
@@ -77,8 +78,17 @@ plt.plot(X_new, preds, c='red', linewidth=2)
 # print the r-squared value for the model
 # print(lm.rsquared)
 
-# Multiple Linear Regression
+# MULTIPLE LINEAR REGRESSION
+
+# lm = smf.ols(formula='Sales ~ TV + Radio + Newspaper', data=data).fit()
+# print(lm.params)
+# print lm.summary()
+
+# only include TV and Radio in the model
+lm = smf.ols(formula='Sales ~ TV + Radio', data=data).fit()
+print lm.rsquared
+
+# add Newspaper to the model (which we believe has no association with Sales)
 lm = smf.ols(formula='Sales ~ TV + Radio + Newspaper', data=data).fit()
-print(lm.params)
-print lm.summary()
+print lm.rsquared
 

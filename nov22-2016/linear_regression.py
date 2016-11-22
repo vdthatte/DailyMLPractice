@@ -44,10 +44,28 @@ lm = smf.ols(formula='Sales ~ TV', data=data).fit()
 
 # create a dataframe for the statsmodel formula interface
 
-X_new = pd.DataFrame({'TV':[50]})
+# X_new = pd.DataFrame({'TV':[50]})
+# X_new.head()
+
+
+# print(lm.predict(X_new))
+
+# create a dataframe with min and max values of TV
+
+X_new = pd.DataFrame({'TV': [data.TV.min(), data.TV.max()]})
 X_new.head()
 
+preds = lm.predict(X_new)
 
-print(lm.predict(X_new))
+# print(preds)
+
+
+# first, plot the observed data
+data.plot(kind='scatter', x='TV', y='Sales')
+
+# then, plot the least squares line
+plt.plot(X_new, preds, c='red', linewidth=2)
+
+plt.show()
 
 

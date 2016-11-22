@@ -68,5 +68,13 @@ plt.plot(X_new, preds, c='red', linewidth=2)
 
 # plt.show()
 
-print(lm.conf_int())
+# print the confidence intervals for the model coefficients
+# print(lm.conf_int())
+
+# hypothesis testing and p-values
+# print(lm.pvalues)
+
+
+
+
 

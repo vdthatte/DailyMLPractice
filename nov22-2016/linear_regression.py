@@ -74,7 +74,11 @@ plt.plot(X_new, preds, c='red', linewidth=2)
 # hypothesis testing and p-values
 # print(lm.pvalues)
 
+# print the r-squared value for the model
+# print(lm.rsquared)
 
-
-
+# Multiple Linear Regression
+lm = smf.ols(formula='Sales ~ TV + Radio + Newspaper', data=data).fit()
+print(lm.params)
+print lm.summary()
 

@@ -66,6 +66,7 @@ data.plot(kind='scatter', x='TV', y='Sales')
 # then, plot the least squares line
 plt.plot(X_new, preds, c='red', linewidth=2)
 
-plt.show()
+# plt.show()
 
+print(lm.conf_int())
 

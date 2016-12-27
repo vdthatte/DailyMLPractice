@@ -65,7 +65,7 @@
 * Hierarchical Clusterer
 * Make Density Based Clusterer
 * Simple K Means
-(more to come...)
+* (more to come...)
 
 ## Resources
 

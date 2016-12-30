@@ -18,7 +18,6 @@ test_data = iris.data[test_indexes]
 classifier = tree.DecisionTreeClassifier()
 classifier.fit(train_data, train_target)
 
-
 # predict label for a new flower
 print classifier.predict(test_data)
 

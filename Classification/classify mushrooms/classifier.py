@@ -24,26 +24,11 @@ with open('mushrooms.csv', 'rb') as csvfile:
 	y = y[1:]
 	x = x[1:]
 
-	# building my own encoder
-	encoded_y = []
-	encoded_x = []
-
-	for letter in y:
-		print (format(ord(letter), 'b'))
-
-	for theList in x:
-		newList = []
-		for letter in theList:
-			newList.append(format(ord(letter), 'b'))
-		encoded_y.append(newList)
-
-	X_train, X_test, y_train, y_test = train_test_split(encoded_x, encoded_y, test_size = 0.1)
-
+	#print encoded_y
+	X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.1)
 	# train the classifier - decision tree
-
 	my_classifier = tree.DecisionTreeClassifier()
 	my_classifier.fit(X_train, y_train)
-
 
 	# make a prediction using test data
 	predictions = my_classifier.predict(X_test)
